@@ -1,6 +1,7 @@
 package br.edu.up.entidades;
 
 import java.util.ArrayList;
+import br.edu.up.persistencia.PersistenciaCelular;
 
 public class Celular {
 	private String marca;
@@ -9,15 +10,43 @@ public class Celular {
 	private int ram;
 	private int armazenamento;
 	private double preco;
+	private int id;
+	private String proprietario;
 	private double ocupado=0;
+	private ArrayList<App> aplicativos = new ArrayList<App>();
 	
+	
+	public void setIdAutomatico() {
+	    int ultimoId = 0;
+	    for(Celular item: PersistenciaCelular.getCelularesVendidos()) {
+	        int id = item.getId();
+	        if(id > ultimoId) {
+	            ultimoId = id;
+	        } else if(id <= ultimoId) {
+	            ultimoId = ultimoId + 1;
+	        }
+	    }
+	    this.id = ultimoId + 1;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getProprietario() {
+		return proprietario;
+	}
+	public void setProprietario(String proprietario) {
+		this.proprietario = proprietario;
+	}
 	public double getOcupado() {
 		return ocupado;
 	}
 	public void setOcupado(double ocupado) {
 		this.ocupado = ocupado;
 	}
-	private ArrayList<App> aplicativos = new ArrayList<App>();
 	
 	public String getMarca() {
 		return marca;

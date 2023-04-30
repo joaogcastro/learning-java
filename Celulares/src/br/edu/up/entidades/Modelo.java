@@ -1,13 +1,13 @@
 package br.edu.up.entidades;
 
 public class Modelo {
-	private static String modelo;
+	private String nomeModelo;
 
-	public static String getModelo() {
-		return modelo;
+	public String getNomeModelo() {
+		return nomeModelo;
 	}
 
-	public static void setModelo(String modelo) {
-		Modelo.modelo = modelo;
+	public void setNomeModelo(String nomeModelo) {
+		this.nomeModelo = nomeModelo;
 	}
 }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Fabricante {
 	private String nome;
-	private ArrayList<Modelo> modelos = new ArrayList<>();
+	private ArrayList<Modelo> modelos = new ArrayList<Modelo>();
 	
 	public String getNome() {
 		return nome;
